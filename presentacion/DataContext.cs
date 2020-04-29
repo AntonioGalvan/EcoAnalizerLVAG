@@ -10,14 +10,14 @@ namespace presentacion
 
         }
 
-        DbSet<Advice> Advices { get; set; }
-        DbSet<Client> Clients { get; set; }
-        DbSet<Expert> Experts { get; set; }
-        DbSet<Question> Questions { get; set; }
-        DbSet<Response> Responses { get; set; }
-        DbSet<Test> Tests { get; set; }
-        DbSet<TestQuestion> TestQuestions { get; set; }
-        DbSet<User> Users { get; set; }
+        public DbSet<Advice> Advices { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Expert> Experts { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Response> Responses { get; set; }
+        public DbSet<Test> Tests { get; set; }
+        public DbSet<TestQuestion> TestQuestions { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
 
