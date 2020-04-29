@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace presentacion
 {
@@ -84,7 +86,44 @@ namespace presentacion
             this.WindowState = FormWindowState.Minimized;
         }
 
+        //Prueba de Login funcional 
+        public void logins()
+        {
+            try
+            {
+                string EcoApp = ConfigurationManager.ConnectionStrings["EcoApp"].ConnectionString;
+                using(SqlConnection conexion = new SqlConnection(EcoApp))
+                {
+                    conexion.Open();
+                    using(SqlCommand cmd = new SqlCommand("SELECT Username, Password FROM Users WHERE Username='" + txtUsuario.Text + "' AND Password='" + txtContra.Text + "'", conexion))
+                    {
+                        SqlDataReader dr = cmd.ExecuteReader();
+
+                        if (dr.Read())
+                        {
+                            this.Hide();
+                            Form pantallaPrincipal = new frmPantallaP();
+                            pantallaPrincipal.Show();
+                            lblError.Visible = false;
+                        }
+                        else
+                        {
+                            lblError.Visible = true;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
         private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            logins();
+        }
+        //prueba
+        /*private void btnIniciar_Click(object sender, EventArgs e)
         {
             if(txtUsuario.Text == "admin" && txtContra.Text == "1234")
             {
@@ -97,7 +136,8 @@ namespace presentacion
             {
                 lblError.Visible = true;
             }
-        }
+        }*/
+
 
         private void pcbContraEyeC_Click(object sender, EventArgs e)
         {
