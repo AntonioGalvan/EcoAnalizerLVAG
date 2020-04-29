@@ -96,6 +96,12 @@
     <Compile Include="FormExistente.designer.cs">
       <DependentUpon>FormExistente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormExpert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExpert.Designer.cs">
+      <DependentUpon>FormExpert.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,10 @@
     <Compile Include="FormRegistro.Designer.cs">
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004291753145_base.cs" />
+    <Compile Include="Migrations\202004291753145_base.designer.cs">
+      <DependentUpon>202004291753145_base.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormExistente.resx">
       <DependentUpon>FormExistente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExpert.resx">
+      <DependentUpon>FormExpert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
@@ -153,6 +166,9 @@
     <EmbeddedResource Include="FormRegistro.resx">
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004291753145_base.resx">
+      <DependentUpon>202004291753145_base.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -163,6 +179,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\presentacion.Data.Expert.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
