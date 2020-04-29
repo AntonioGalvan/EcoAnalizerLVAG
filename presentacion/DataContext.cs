@@ -5,7 +5,7 @@ namespace presentacion
 {
     public class DataContext : DbContext
     {
-        public DataContext() : base("name = EcoAnalizer")
+        public DataContext() : base("name = EcoApp")
         {
 
         }

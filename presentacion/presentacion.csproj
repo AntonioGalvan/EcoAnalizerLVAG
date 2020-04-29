@@ -84,6 +84,18 @@
     <Compile Include="FormAcerca.designer.cs">
       <DependentUpon>FormAcerca.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdvice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdvice.Designer.cs">
+      <DependentUpon>FormAdvice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarConsejo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarConsejo.Designer.cs">
+      <DependentUpon>FormAgregarConsejo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBitacora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,12 @@
     </Compile>
     <Compile Include="FormExistente.designer.cs">
       <DependentUpon>FormExistente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExperto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExperto.Designer.cs">
+      <DependentUpon>FormExperto.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
@@ -126,16 +144,26 @@
     <Compile Include="FormRegistro.Designer.cs">
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAcerca.resx">
       <DependentUpon>FormAcerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdvice.resx">
+      <DependentUpon>FormAdvice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarConsejo.resx">
+      <DependentUpon>FormAgregarConsejo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBitacora.resx">
       <DependentUpon>FormBitacora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormExistente.resx">
       <DependentUpon>FormExistente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExperto.resx">
+      <DependentUpon>FormExperto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
