@@ -108,6 +108,12 @@
     <Compile Include="FormExistente.designer.cs">
       <DependentUpon>FormExistente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormExperto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExperto.Designer.cs">
+      <DependentUpon>FormExperto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     <EmbeddedResource Include="FormExistente.resx">
       <DependentUpon>FormExistente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormExperto.resx">
+      <DependentUpon>FormExperto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +198,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="presentacion.Data.Advice.datasource" />
+    <None Include="presentacion.Data.Expert.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
