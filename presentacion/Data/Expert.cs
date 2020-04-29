@@ -14,7 +14,6 @@ namespace presentacion.Data
         [StringLength(50)]
         public string LastName { get; set; }
         [Required]
-        [StringLength(4)]
         public int Age { get; set; }
         [Required]
         [StringLength(20)]
