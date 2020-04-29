@@ -92,7 +92,7 @@ namespace presentacion
                     else
                         dataContext.Entry<Advice>(advice).State = EntityState.Modified;
                     dataContext.SaveChanges();
-                    MetroFramework.MetroMessageBox.Show(this, "Empleado guardado");
+                    MetroFramework.MetroMessageBox.Show(this, "Consejo guardado");
                     grdConsejos.Refresh();
                     pnlAgregarEditar.Enabled = false;
                 }
