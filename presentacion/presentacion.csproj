@@ -84,6 +84,18 @@
     <Compile Include="FormAcerca.designer.cs">
       <DependentUpon>FormAcerca.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdvice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdvice.Designer.cs">
+      <DependentUpon>FormAdvice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarConsejo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarConsejo.Designer.cs">
+      <DependentUpon>FormAgregarConsejo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBitacora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +143,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAcerca.resx">
       <DependentUpon>FormAcerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdvice.resx">
+      <DependentUpon>FormAdvice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarConsejo.resx">
+      <DependentUpon>FormAgregarConsejo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBitacora.resx">
       <DependentUpon>FormBitacora.cs</DependentUpon>
