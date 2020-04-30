@@ -39,7 +39,6 @@
             this.autorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlAgregarEditar = new MetroFramework.Controls.MetroPanel();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtAutor = new MetroFramework.Controls.MetroTextBox();
@@ -48,8 +47,10 @@
             this.lblAutor = new MetroFramework.Controls.MetroLabel();
             this.lblTexto = new MetroFramework.Controls.MetroLabel();
             this.lblId = new MetroFramework.Controls.MetroLabel();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsejos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adviceBindingSource)).BeginInit();
             this.pnlAgregarEditar.SuspendLayout();
@@ -159,16 +160,6 @@
             this.pnlAgregarEditar.VerticalScrollbarHighlightOnWheel = false;
             this.pnlAgregarEditar.VerticalScrollbarSize = 10;
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(191, 170);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(69, 23);
-            this.btnGuardar.TabIndex = 8;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(103, 170);
@@ -266,6 +257,7 @@
             this.txtId.CustomButton.UseSelectable = true;
             this.txtId.CustomButton.Visible = false;
             this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.adviceBindingSource, "Id", true));
+            this.txtId.Enabled = false;
             this.txtId.Lines = new string[0];
             this.txtId.Location = new System.Drawing.Point(127, 40);
             this.txtId.MaxLength = 32767;
@@ -309,6 +301,16 @@
             this.lblId.TabIndex = 2;
             this.lblId.Text = "Id";
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(189, 170);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(69, 23);
+            this.btnGuardar.TabIndex = 8;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(193, 347);
@@ -329,12 +331,23 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(657, 347);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(69, 23);
+            this.btnVolver.TabIndex = 9;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmAgregarConsejo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(900, 400);
+            this.ClientSize = new System.Drawing.Size(761, 400);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.pnlAgregarEditar);
@@ -343,6 +356,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAgregarConsejo";
             this.Text = "FormAgregarConsejo";
+            this.Load += new System.EventHandler(this.frmAgregarConsejo_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.grdConsejos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adviceBindingSource)).EndInit();
             this.pnlAgregarEditar.ResumeLayout(false);
@@ -372,5 +386,6 @@
         private MetroFramework.Controls.MetroLabel lblId;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -8,13 +8,12 @@
         [Key]
         public int Id { get; set; }
         [Required]
-        [StringLength(20)]
+        [StringLength(200)]
         public string Texto { get; set; }
         [Required]
-        [StringLength(200)]
+        [StringLength(50)]
         public string Autor { get; set; }
-        [Required]
-        [StringLength(70)]
+
 
         public User User { get; set; }
     }

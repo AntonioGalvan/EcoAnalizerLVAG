@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using presentacion.Data;
+using System;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace presentacion
@@ -40,6 +36,57 @@ namespace presentacion
         private void lblCiudad_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            this.Dispose();
+        }
+
+        private void frmExperto_Load(object sender, EventArgs e)
+        {
+            using (DataContext dataContext = new DataContext())
+            {
+                expertBindingSource.DataSource =
+                    dataContext.Experts.ToList();
+            }
+            pnlExpert.Enabled = false;
+            Expert expert = expertBindingSource.Current as Expert;
+            if (expert != null && expert.ImageUrl != null)
+                ptrExpert.Image = Image.FromFile(expert.ImageUrl);
+            else
+                ptrExpert.Image = null;
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            pnlExpert.Enabled = true;
+            ptrExpert.Image = null;
+            expertBindingSource.Add(new Expert());
+            expertBindingSource.MoveLast();
+            txtNombre.Focus();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd =
+                new OpenFileDialog()
+                {
+                    Filter = "archivos GIF|*.gif|archivos JPEG|*.jpg|archivos PNG|*.png"
+                }) 
+            {
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    ptrExpert.Image = Image.FromFile(ofd.FileName);
+                    Expert expert = 
+                        expertBindingSource.Current as Expert;
+                    if (expert != null)
+                        expert.ImageUrl = ofd.FileName;
+                    else
+                        ptrExpert.Image = null; 
+                }
+            }
         }
     }
 }

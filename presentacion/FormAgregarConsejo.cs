@@ -1,13 +1,7 @@
 ﻿using presentacion.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace presentacion
@@ -18,8 +12,8 @@ namespace presentacion
         {
             InitializeComponent();
         }
-
-        private void frmAgregarConsejo_Load(object sender, EventArgs e)
+       
+        private void frmAgregarConsejo_Load_1(object sender, EventArgs e)
         {
             using (DataContext dataContext = new DataContext())
             {
@@ -74,7 +68,7 @@ namespace presentacion
         {
             pnlAgregarEditar.Enabled = false;
             adviceBindingSource.ResetBindings(false);
-            frmAgregarConsejo_Load(sender, e);
+            frmAgregarConsejo_Load_1(sender, e);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -92,11 +86,16 @@ namespace presentacion
                     else
                         dataContext.Entry<Advice>(advice).State = EntityState.Modified;
                     dataContext.SaveChanges();
-                    MetroFramework.MetroMessageBox.Show(this, "Empleado guardado");
+                    MetroFramework.MetroMessageBox.Show(this, "Consejo guardado");
                     grdConsejos.Refresh();
                     pnlAgregarEditar.Enabled = false;
                 }
             }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
