@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace presentacion
 {
@@ -191,9 +193,6 @@ namespace presentacion
 
                 if (txtEdad.Text != "" && txtEdad.Text != "Edad")
                 {
-                    int edad = int.Parse(txtEdad.Text);
-                    if (edad >= 5 && edad <= 120)
-                    {
                         txtEdad.ForeColor = Color.Black;
                         carac(txtNombre.Text);
                         if (txtNombre.Text != "" && txtNombre.Text != "Nombre" && len < 20)
@@ -217,11 +216,7 @@ namespace presentacion
                                             txtContra.ForeColor = Color.Black;
                                             if (txtConfirmContra.Text != "" && txtConfirmContra.Text != "Confirmar contraseña" && txtConfirmContra.Text == txtContra.Text)
                                             {
-                                                txtConfirmContra.ForeColor = Color.Black;
-                                                lblRegistroE.Visible = true;
-                                                btnRegistrarse.Visible = false;
-                                                lblError.Visible = false;
-                                                btnIniciar.Visible = true;
+                                                registro();
                                             }
                                             else
                                             {
@@ -264,13 +259,6 @@ namespace presentacion
                             lblError.Visible = true;
                             txtNombre.ForeColor = Color.Red;
                         }
-                    }
-                    else
-                    {
-                        lblError.Text = "Edad inválida";
-                        lblError.Visible = true;
-                        txtEdad.ForeColor = Color.Red;
-                    }
                 }
                 else
                 {
@@ -305,5 +293,31 @@ namespace presentacion
             Form login = new frmLogin();
             login.Show();
         }
+
+        //Prueba de Login funcional 
+        public void registro()
+        {   
+            try
+            {
+                string EcoApp = ConfigurationManager.ConnectionStrings["EcoApp"].ConnectionString;
+                using (SqlConnection conexion = new SqlConnection(EcoApp))
+                {
+                    conexion.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Users(Username,Password) VALUES("+ this.txtUsuario.Text + ",'" + this.txtContra.Text + "')", conexion);
+                    cmd.ExecuteNonQuery();
+                    txtConfirmContra.ForeColor = Color.Black;
+                    lblRegistroE.Visible = true;
+                    btnRegistrarse.Visible = false;
+                    lblError.Visible = false;
+                    btnIniciar.Visible = true;
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
     }
 }
