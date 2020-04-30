@@ -12,17 +12,7 @@ namespace presentacion
         {
             InitializeComponent();
         }
-
-        //private void frmAgregarConsejo_Load(object sender, EventArgs e)
-        //{
-        //    using (DataContext dataContext = new DataContext())
-        //    {
-        //        adviceBindingSource.DataSource =
-        //            dataContext.Advices.ToList();
-        //    }
-        //    pnlAgregarEditar.Enabled = false;
-        //    Advice advice = adviceBindingSource.Current as Advice;
-        //}
+       
         private void frmAgregarConsejo_Load_1(object sender, EventArgs e)
         {
             using (DataContext dataContext = new DataContext())

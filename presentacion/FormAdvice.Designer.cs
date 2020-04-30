@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lblConsejos = new System.Windows.Forms.Label();
-            this.btnGenerarConsejo = new System.Windows.Forms.Label();
+            this.lblGenerarConsejo = new System.Windows.Forms.Label();
             this.btnAgregarConsejo = new System.Windows.Forms.Button();
             this.btnCierre = new System.Windows.Forms.Button();
             this.adviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,15 +47,15 @@
             this.lblConsejos.TabIndex = 1;
             this.lblConsejos.Text = "Consejos";
             // 
-            // btnGenerarConsejo
+            // lblGenerarConsejo
             // 
-            this.btnGenerarConsejo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarConsejo.Location = new System.Drawing.Point(54, 121);
-            this.btnGenerarConsejo.Name = "btnGenerarConsejo";
-            this.btnGenerarConsejo.Size = new System.Drawing.Size(468, 259);
-            this.btnGenerarConsejo.TabIndex = 5;
-            this.btnGenerarConsejo.Text = "Click Aquí para generar un consejo aleatorio";
-            this.btnGenerarConsejo.Click += new System.EventHandler(this.btnGenerarConsejo_Click);
+            this.lblGenerarConsejo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenerarConsejo.Location = new System.Drawing.Point(54, 121);
+            this.lblGenerarConsejo.Name = "lblGenerarConsejo";
+            this.lblGenerarConsejo.Size = new System.Drawing.Size(468, 259);
+            this.lblGenerarConsejo.TabIndex = 5;
+            this.lblGenerarConsejo.Text = "Click Aquí para generar un consejo aleatorio";
+            this.lblGenerarConsejo.Click += new System.EventHandler(this.btnGenerarConsejo_Click);
             // 
             // btnAgregarConsejo
             // 
@@ -95,7 +95,7 @@
             this.ClientSize = new System.Drawing.Size(659, 480);
             this.Controls.Add(this.btnCierre);
             this.Controls.Add(this.btnAgregarConsejo);
-            this.Controls.Add(this.btnGenerarConsejo);
+            this.Controls.Add(this.lblGenerarConsejo);
             this.Controls.Add(this.lblConsejos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdvice";
@@ -109,7 +109,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblConsejos;
-        private System.Windows.Forms.Label btnGenerarConsejo;
+        private System.Windows.Forms.Label lblGenerarConsejo;
         private System.Windows.Forms.Button btnAgregarConsejo;
         private System.Windows.Forms.Button btnCierre;
         private System.Windows.Forms.BindingSource adviceBindingSource;
