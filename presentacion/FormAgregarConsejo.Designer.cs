@@ -34,8 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grdConsejos = new MetroFramework.Controls.MetroGrid();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlAgregarEditar = new MetroFramework.Controls.MetroPanel();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtAutor = new MetroFramework.Controls.MetroTextBox();
@@ -44,15 +47,12 @@
             this.lblAutor = new MetroFramework.Controls.MetroLabel();
             this.lblTexto = new MetroFramework.Controls.MetroLabel();
             this.lblId = new MetroFramework.Controls.MetroLabel();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.adviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.autorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsejos)).BeginInit();
-            this.pnlAgregarEditar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adviceBindingSource)).BeginInit();
+            this.pnlAgregarEditar.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -114,6 +114,28 @@
             this.grdConsejos.Size = new System.Drawing.Size(356, 203);
             this.grdConsejos.TabIndex = 3;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // textoDataGridViewTextBoxColumn
+            // 
+            this.textoDataGridViewTextBoxColumn.DataPropertyName = "Texto";
+            this.textoDataGridViewTextBoxColumn.HeaderText = "Texto";
+            this.textoDataGridViewTextBoxColumn.Name = "textoDataGridViewTextBoxColumn";
+            // 
+            // autorDataGridViewTextBoxColumn
+            // 
+            this.autorDataGridViewTextBoxColumn.DataPropertyName = "Autor";
+            this.autorDataGridViewTextBoxColumn.HeaderText = "Autor";
+            this.autorDataGridViewTextBoxColumn.Name = "autorDataGridViewTextBoxColumn";
+            // 
+            // adviceBindingSource
+            // 
+            this.adviceBindingSource.DataSource = typeof(presentacion.Data.Advice);
+            // 
             // pnlAgregarEditar
             // 
             this.pnlAgregarEditar.Controls.Add(this.btnCancelar);
@@ -135,16 +157,6 @@
             this.pnlAgregarEditar.VerticalScrollbarBarColor = true;
             this.pnlAgregarEditar.VerticalScrollbarHighlightOnWheel = false;
             this.pnlAgregarEditar.VerticalScrollbarSize = 10;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(657, 347);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(69, 23);
-            this.btnGuardar.TabIndex = 8;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -287,6 +299,16 @@
             this.lblId.TabIndex = 2;
             this.lblId.Text = "Id";
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(657, 347);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(69, 23);
+            this.btnGuardar.TabIndex = 8;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(193, 347);
@@ -307,28 +329,6 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // adviceBindingSource
-            // 
-            this.adviceBindingSource.DataSource = typeof(presentacion.Data.Advice);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // textoDataGridViewTextBoxColumn
-            // 
-            this.textoDataGridViewTextBoxColumn.DataPropertyName = "Texto";
-            this.textoDataGridViewTextBoxColumn.HeaderText = "Texto";
-            this.textoDataGridViewTextBoxColumn.Name = "textoDataGridViewTextBoxColumn";
-            // 
-            // autorDataGridViewTextBoxColumn
-            // 
-            this.autorDataGridViewTextBoxColumn.DataPropertyName = "Autor";
-            this.autorDataGridViewTextBoxColumn.HeaderText = "Autor";
-            this.autorDataGridViewTextBoxColumn.Name = "autorDataGridViewTextBoxColumn";
-            // 
             // frmAgregarConsejo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,10 +344,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAgregarConsejo";
             this.Text = "FormAgregarConsejo";
+            this.Load += new System.EventHandler(this.frmAgregarConsejo_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.grdConsejos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adviceBindingSource)).EndInit();
             this.pnlAgregarEditar.ResumeLayout(false);
             this.pnlAgregarEditar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adviceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

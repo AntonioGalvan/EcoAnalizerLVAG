@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblConsejos = new System.Windows.Forms.Label();
             this.btnGenerarConsejo = new System.Windows.Forms.Label();
             this.btnAgregarConsejo = new System.Windows.Forms.Button();
             this.btnCierre = new System.Windows.Forms.Button();
+            this.adviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.adviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblConsejos
@@ -52,6 +55,7 @@
             this.btnGenerarConsejo.Size = new System.Drawing.Size(468, 259);
             this.btnGenerarConsejo.TabIndex = 5;
             this.btnGenerarConsejo.Text = "Click Aquí para generar un consejo aleatorio";
+            this.btnGenerarConsejo.Click += new System.EventHandler(this.btnGenerarConsejo_Click);
             // 
             // btnAgregarConsejo
             // 
@@ -79,6 +83,10 @@
             this.btnCierre.UseVisualStyleBackColor = true;
             this.btnCierre.Click += new System.EventHandler(this.btnCierre_Click);
             // 
+            // adviceBindingSource
+            // 
+            this.adviceBindingSource.DataSource = typeof(presentacion.Data.Advice);
+            // 
             // frmAdvice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,6 +100,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdvice";
             this.Text = "FormAdvice";
+            ((System.ComponentModel.ISupportInitialize)(this.adviceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +112,6 @@
         private System.Windows.Forms.Label btnGenerarConsejo;
         private System.Windows.Forms.Button btnAgregarConsejo;
         private System.Windows.Forms.Button btnCierre;
+        private System.Windows.Forms.BindingSource adviceBindingSource;
     }
 }

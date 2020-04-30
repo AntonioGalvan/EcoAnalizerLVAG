@@ -28,5 +28,10 @@ namespace presentacion
             Application.Exit();
             this.Dispose();
         }
+
+        private void btnGenerarConsejo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
