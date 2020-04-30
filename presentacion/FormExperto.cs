@@ -46,10 +46,10 @@ namespace presentacion
 
         private void frmExperto_Load(object sender, EventArgs e)
         {
-            using (DataContext dataContext = new DataContext())
+            //using (DataContext dataContext = new DataContext())
             {
-                expertBindingSource.DataSource =
-                    dataContext.Experts.ToList();
+                //expertBindingSource.DataSource =
+                    //dataContext.Experts.ToList();
             }
             pnlExpert.Enabled = false;
             Expert expert = expertBindingSource.Current as Expert;
