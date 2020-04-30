@@ -49,7 +49,7 @@ namespace presentacion
             using (DataContext dataContext = new DataContext())
             {
                 expertBindingSource.DataSource =
-                    dataContext.Advices.ToList();
+                    dataContext.Experts.ToList();
             }
             pnlExpert.Enabled = false;
             Expert expert = expertBindingSource.Current as Expert;

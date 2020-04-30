@@ -47,6 +47,7 @@
             this.pcbContra = new System.Windows.Forms.PictureBox();
             this.pcbContraEyeC = new System.Windows.Forms.PictureBox();
             this.pcbContraEyeO = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlImagenLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -60,6 +61,7 @@
             // pnlImagenLogo
             // 
             this.pnlImagenLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(242)))), ((int)(((byte)(107)))));
+            this.pnlImagenLogo.Controls.Add(this.label1);
             this.pnlImagenLogo.Controls.Add(this.lblEco);
             this.pnlImagenLogo.Controls.Add(this.pcbLogo);
             this.pnlImagenLogo.Dock = System.Windows.Forms.DockStyle.Left;
@@ -296,6 +298,16 @@
             this.pcbContraEyeO.TabStop = false;
             this.pcbContraEyeO.Click += new System.EventHandler(this.pcbContraEyeO_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(53, 252);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "¿Quieres ser parte de nosotros?";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnIniciar;
@@ -357,6 +369,7 @@
         private System.Windows.Forms.PictureBox pcbContraEyeC;
         private System.Windows.Forms.PictureBox pcbContraEyeO;
         protected Microsoft.VisualBasic.PowerPacks.LineShape lnsContra;
+        private System.Windows.Forms.Label label1;
     }
 }
 
