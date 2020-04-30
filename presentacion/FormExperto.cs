@@ -1,5 +1,6 @@
 ﻿using presentacion.Data;
 using System;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -85,6 +86,28 @@ namespace presentacion
                         expert.ImageUrl = ofd.FileName;
                     else
                         ptrExpert.Image = null; 
+                }
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            using (DataContext dataContext = new DataContext())
+            {
+                Expert expert =
+                    expertBindingSource.Current as Expert;
+                if (expert != null)
+                {
+                    if (dataContext.Entry<Expert>(expert).State == EntityState.Detached)
+                        dataContext.Set<Expert>().Attach(expert);
+                    if (expert.Id == 0)
+                        dataContext.Entry<Expert>(expert).State = EntityState.Added;
+                    else
+                        dataContext.Entry<Expert>(expert).State = EntityState.Modified;
+                    dataContext.SaveChanges();
+                    MetroFramework.MetroMessageBox.Show(this, "Consejo guardado");
+                    grdExpertos.Refresh();
+                    pnlExpert.Enabled = false;
                 }
             }
         }
